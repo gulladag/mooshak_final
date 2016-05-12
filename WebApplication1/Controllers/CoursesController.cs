@@ -9,6 +9,7 @@ using WebApplication1.Models.Entities;
 using WebApplication1.Models.ViewModels;
 using WebApplication1.Services;
 using WebApplication1.Utils;
+using Microsoft.AspNet.Identity;
 
 namespace WebApplication1.Controllers
 {
@@ -51,11 +52,9 @@ namespace WebApplication1.Controllers
             }
            else if (User.IsInRole("Teachers") || User.IsInRole("Students"))
             {
-                //var name = User.Identity.Name;
-                //var id = userservice.GetUserIDByName(name);
-
-                //model = coursesservice.GetCoursesByUserID(id);
-                model = coursesservice.GetAllCourses();
+                var id = User.Identity.GetUserId();
+                model = coursesservice.GetCoursesByUserID(id);
+                
             }
             return View(model);
          
@@ -164,6 +163,15 @@ namespace WebApplication1.Controllers
 
                 return RedirectToAction("ViewCourses");
             }
+            return View(model);
+        }
+
+        [HttpGet]
+        [Route("Courses/ViewAssignmentDetails/{assignmentId}")]
+        public ActionResult ViewAssignmentDetails(int assignmentId)
+        {
+            AssignmentsService service = new AssignmentsService();
+            AssignmentViewModel model = service.GetAssignmentByID(assignmentId);
             return View(model);
         }
 

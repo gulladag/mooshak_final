@@ -39,15 +39,15 @@ else
 
                         @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
                         {
-                            @Html.ActionLink("Edit", "EditCourse", new { id = Model.ID }) 
+                            @Html.ActionLink("Edit", "EditAssignment", "Assignments", new { id = assignments.ID }, null) 
                         }
                         @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
                         {
-                            @Html.ActionLink("Details", "ViewCourseDetails", new { id = Model.ID }) 
+                            @Html.ActionLink("Details", "ViewAssignmentDetails", new { id = assignments.ID }) 
                         }
                         @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
                         {
-                            @Html.ActionLink("Delete", "DeleteCourse", new { id = Model.ID })
+                            @Html.ActionLink("Delete", "DeleteAssignment", new { id = assignments.ID })
                         }
 
                     </td>

@@ -12,9 +12,6 @@ namespace WebApplication1.Models.Entities
         public string Descriptin { get; set; }
         public DateTime  Start { get; set; }
         public DateTime End { get; set; }
-        public virtual ICollection<Course> Courses { get; set; }
-
-
-
+        public virtual Course Course { get; set; }
     }
 }

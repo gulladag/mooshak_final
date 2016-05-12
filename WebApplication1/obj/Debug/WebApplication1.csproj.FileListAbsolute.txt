@@ -447,3 +447,8 @@ C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebAppli
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial1.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial2.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial3.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial4.resources

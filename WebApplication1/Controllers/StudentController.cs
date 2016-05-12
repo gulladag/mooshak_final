@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models.ViewModels;
+using System.IO;
 
 namespace WebApplication1.Controllers
 {
@@ -22,15 +23,17 @@ namespace WebApplication1.Controllers
                         "return 0;\n" +
                         "}";
 
-            var workingFolder = "C:\\Temp\\Mooshak2Code\\";
-            //Finna út hvert nefnið á notandanum er sem loggaður er inn. Ef það er til mappa frá honum þá að nota hana annars að búa hana til með:
+            var workingFolder = Server.MapPath("~/SubmittedCode/" + User.Identity.Name)+"\\";
+            //Finna út hvert nafnið á notandanum er sem loggaður er inn. Ef það er til mappa frá honum þá að nota hana annars að búa hana til með:
             //Directory.CreateDirectory;
+            if (!Directory.Exists(workingFolder)) { Directory.CreateDirectory(workingFolder); }
             var cppFileName = "Hello.cpp";
             var exeFilePath = workingFolder + "Hello.exe";
 
             //Write the code to a file, such that the compiler
             //can find it:
             System.IO.File.WriteAllText(workingFolder + cppFileName, code);
+            //Server.MapPath("~/SubmittedCode/");
 
             //In this case, we use the C++ compiler (cl.exe) which ships
             //with Visual Studio. It is located in this folder:

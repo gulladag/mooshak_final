@@ -179,6 +179,26 @@
     <Compile Include="Migrations\201605121338366_test1.Designer.cs">
       <DependentUpon>201605121338366_test1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605121509160_initial.cs" />
+    <Compile Include="Migrations\201605121509160_initial.Designer.cs">
+      <DependentUpon>201605121509160_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605121536196_initial1.cs" />
+    <Compile Include="Migrations\201605121536196_initial1.Designer.cs">
+      <DependentUpon>201605121536196_initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605121549505_initial2.cs" />
+    <Compile Include="Migrations\201605121549505_initial2.Designer.cs">
+      <DependentUpon>201605121549505_initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605121554193_initial3.cs" />
+    <Compile Include="Migrations\201605121554193_initial3.Designer.cs">
+      <DependentUpon>201605121554193_initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605121557243_initial4.cs" />
+    <Compile Include="Migrations\201605121557243_initial4.Designer.cs">
+      <DependentUpon>201605121557243_initial4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
@@ -265,6 +285,7 @@
     <Content Include="Views\Assignments\EditAssignment.cshtml" />
     <Content Include="Views\Assignments\CreateMilestone.cshtml" />
     <Content Include="Views\Student\Submissoin.cshtml" />
+    <Content Include="Views\Courses\ViewAssignmentDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,6 +303,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605121338366_test1.resx">
       <DependentUpon>201605121338366_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121509160_initial.resx">
+      <DependentUpon>201605121509160_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121536196_initial1.resx">
+      <DependentUpon>201605121536196_initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121549505_initial2.resx">
+      <DependentUpon>201605121549505_initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121554193_initial3.resx">
+      <DependentUpon>201605121554193_initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121557243_initial4.resx">
+      <DependentUpon>201605121557243_initial4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -89,11 +89,14 @@ namespace WebApplication1.Services
 
             var viewModel = new AssignmentViewModel
             {
+                ID = assignment.ID,
+                CourseID = assignment.Course.ID,
                 Title = assignment.Title,
+                Description = assignment.Descriptin,
                 Milestones = milestones
             };
 
-            return null;
+            return viewModel;
         }
         public List<Assignment> GetAllAssignments()
         {

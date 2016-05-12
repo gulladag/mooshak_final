@@ -56,7 +56,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        [Route("Courses/EditAssignment/{assignmentID}")]
+        [Route("Assignments/EditAssignment/{assignmentID}")]
         public ActionResult EditAssignment(int? assignmentID)
         {
             AssignmentsService b = new AssignmentsService();
@@ -66,6 +66,7 @@ namespace WebApplication1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Assignments/EditAssignment/{assignmentID}")]
         public ActionResult EditAssignment(AssignmentViewModel model)
         {
             if (ModelState.IsValid)
@@ -73,7 +74,7 @@ namespace WebApplication1.Controllers
                 AssignmentsService assignmentdb = new AssignmentsService();
                 assignmentdb.EditAssignmentInDB(model);
 
-                return RedirectToAction("ViewCourses");
+                return RedirectToAction("ViewCourseDetails", "Courses", new { id = model.CourseID });
             }
             return View(model);
         }

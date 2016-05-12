@@ -12,7 +12,6 @@ namespace WebApplication1.Models.ViewModels
         public string Title { get; set; }
         public int ID { get; set; }
         public int CourseID { get; set; }
-        public string CourseName { get; set; }
         public string Description { get; set; }
         [Display(Name = "Start Date")]
         public string StartDate { get; set; }
@@ -28,7 +27,6 @@ namespace WebApplication1.Models.ViewModels
         [Required]
         [Display(Name = "Due time")]
         public string EndTime { get; set; }
-
 
         public List<AssignmentMilestoneViewModel> Milestones { get; set; }
     }

@@ -43,11 +43,11 @@ else
                         }
                         @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
                         {
-                            @Html.ActionLink("Details", "ViewAssignmentDetails", new { id = assignments.ID }) 
+                            @Html.ActionLink("Details", "ViewAssignmentDetails", "Assignments", new { id = assignments.ID }, null) 
                         }
                         @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
                         {
-                            @Html.ActionLink("Delete", "DeleteAssignment", new { id = assignments.ID })
+                            @Html.ActionLink("Delete", "DeleteAssignment", "Assignments", new { id = assignments.ID }, null)
                         }
 
                     </td>

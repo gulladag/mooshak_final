@@ -272,7 +272,6 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Assignments\Details.cshtml" />
     <Content Include="Views\Courses\AddCourse.cshtml" />
     <Content Include="Views\Courses\ViewCourses.cshtml" />
     <Content Include="Views\Courses\ViewCourseDetails.cshtml" />
@@ -285,7 +284,7 @@
     <Content Include="Views\Assignments\EditAssignment.cshtml" />
     <Content Include="Views\Assignments\CreateMilestone.cshtml" />
     <Content Include="Views\Student\Submissoin.cshtml" />
-    <Content Include="Views\Courses\ViewAssignmentDetails.cshtml" />
+    <Content Include="Views\Assignments\ViewAssignmentDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

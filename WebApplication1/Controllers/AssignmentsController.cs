@@ -48,8 +48,9 @@ namespace WebApplication1.Controllers
 
             return View(model);
         }
-
-        public ActionResult Details(int id)
+        [HttpGet]
+        [Route("Assignments/ViewAssignmentDetails/{id}")]
+        public ActionResult ViewAssignmentDetails(int id)
         {
             var viewModel = _service.GetAssignmentByID(id);
             return View(viewModel);

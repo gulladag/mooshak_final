@@ -18,50 +18,41 @@
         @Html.HiddenFor(model => model.CourseID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Title, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title)
-                @Html.ValidationMessageFor(model => model.Title)
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.StartDate, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
-                @Html.ValidationMessageFor(model => model.Description)
+                @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control", type = "date" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.StartTime, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.StartTime, new { @class = "form-control", placeholder = "22:22" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.StartDate, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EndDate, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate)
-                @Html.ValidationMessageFor(model => model.StartDate)
+                @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control", type = "date" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.StartTime, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EndTime, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartTime)
-                @Html.ValidationMessageFor(model => model.StartTime)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EndDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EndDate)
-                @Html.ValidationMessageFor(model => model.EndDate)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EndTime, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EndTime)
-                @Html.ValidationMessageFor(model => model.EndTime)
+                @Html.TextBoxFor(model => model.EndTime, new { @class = "form-control", placeholder = "22:22" })
             </div>
         </div>
 
@@ -74,5 +65,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "ViewCourseDetails", "Courses", new { id = Model.CourseID}, null )
 </div>

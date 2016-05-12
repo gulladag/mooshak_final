@@ -25,8 +25,18 @@ namespace WebApplication1.Services
 
         public void EditAssignmentInDB(AssignmentViewModel model)
         {
+            char delimiter = '-';
+            string[] StartDateSplit = model.StartDate.Split(delimiter);
+            string[] EndDateSplit = model.EndDate.Split(delimiter);
+
+            DateTime Start = Convert.ToDateTime(StartDateSplit[0] + "/" + StartDateSplit[1] + "/" + StartDateSplit[2] + " " + model.StartTime + ":00.00");
+            DateTime End = Convert.ToDateTime(EndDateSplit[0] + "/" + EndDateSplit[1] + "/" + EndDateSplit[2] + " " + model.EndTime + ":00.00");
+
             var assignment = _db.Assignments.SingleOrDefault(x => x.ID == model.ID);
             assignment.Title = model.Title;
+            assignment.Descriptin = model.Description;
+            assignment.Start = Start;
+            assignment.End = End;
             _db.Entry(assignment).State = EntityState.Modified;
             _db.SaveChanges();
         }

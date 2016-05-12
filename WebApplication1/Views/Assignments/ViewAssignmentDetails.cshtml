@@ -10,28 +10,15 @@
     <h4>AssignmentViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.CourseID)
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
         </dd>
 
         <dt>
@@ -77,6 +64,11 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+     
+    @Html.ActionLink("Back to List", "ViewCourseDetails", "Courses", new { id = Model.CourseID }, null)
+    @if (User.IsInRole("Teachers"))
+    {
+        @Html.ActionLink("Edit", "EditAssignment", "Assignments", new { id = Model.ID })
+        @Html.ActionLink("Create Milestone", "CreateMilestone", "Assignments", new { id = Model.ID })
+    }
 </p>

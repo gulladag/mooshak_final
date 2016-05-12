@@ -93,10 +93,12 @@ namespace WebApplication1.Controllers
                     {
                         lines.Add(processExe.StandardOutput.ReadLine());
                     }
+                    Debug.WriteLine("Tests");
 
                     ViewBag.Output = lines;
                 }
             }
+            Debug.WriteLine("Tests");
             //Það vantar else hér!!
 
             //TODE: we might want to clean up after the process, there 

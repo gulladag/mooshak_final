@@ -80,10 +80,10 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Administrators, Teachers")]
-        public ActionResult CreateMilestone (int assignmentID)
+        public ActionResult CreateMilestone ()
         {
             AssignmentMilestoneViewModel newMilestone = new AssignmentMilestoneViewModel();
-            newMilestone.AssignmentID = assignmentID;
+            //newMilestone.AssignmentID = assignmentID;
 
             return View(newMilestone);
         }

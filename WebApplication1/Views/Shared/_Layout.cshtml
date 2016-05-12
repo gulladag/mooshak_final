@@ -1,0 +1,103 @@
+﻿@using WebApplication1.Utils
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Mooshak 2.0</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @if(User.IsInRole("Administrators") || User.IsInRole("Teachers") || User.IsInRole("Students"))
+                {
+                
+                    @Html.ActionLink("Mooshak 2.0", "ViewCourses", "Courses", null, new { @class = "navbar-brand" })
+                }
+                
+                else
+                {
+                    @Html.ActionLink("Mooshak 2.0", "Login", "Account", null, new { @class = "navbar-brand"})
+                }
+                
+             </div>
+            
+            @if(User.IsInRole("Administrators"))
+            {
+                
+                <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Course", "ViewCourses", "Courses")</li>
+                    <li>@Html.ActionLink("Users", "ViewUsers", "Account")</li>
+                    <li>@Html.ActionLink("Assignment", "AddAssignment", "Assignments")</li>
+                    <li>@Html.ActionLink("Create Milestone","CreateMilestone", "Assignments")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+                
+            
+            }
+            else if(User.IsInRole("Teachers"))
+            {
+
+                <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Course", "ViewCourses", "Courses")</li>
+                    <li>@Html.ActionLink("Users", "ViewUsers", "Account")</li>
+                    <li>@Html.ActionLink("Assignment", "AddAssignment", "Assignments")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            }
+            
+            else if(User.IsInRole("Students"))
+            {
+                <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Course", "ViewCourses", "Courses")</li>
+                    <li>@Html.ActionLink("Users", "ViewUsers", "Account")</li>
+                    <li>@Html.ActionLink("Assignment", "AddAssignment", "Assignments")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            
+            }
+                
+            else{
+              
+            <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+            </ul>
+            </div>
+            
+            }
+                
+</div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>The time is now: @DateTime.Now.ToString("HH:mm:ss")</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

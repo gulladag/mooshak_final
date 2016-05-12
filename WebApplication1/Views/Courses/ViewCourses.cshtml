@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication1.Models.ViewModels.CourseViewModel>
+
+@{
+    ViewBag.Title = "View Courses";
+}
+
+<h2>ViewCourses</h2>
+
+
+<p>
+    @if (User.IsInRole("Administrators"))
+    {
+    @Html.ActionLink("Create New", "AddCourse")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @if (User.IsInRole("Administrators"))
+            {
+                @Html.ActionLink("Edit", "EditCourse", new { id = item.ID }) 
+            }
+            @if (User.IsInRole("Administrators"))
+            {
+                @Html.ActionLink("Details", "ViewCourseDetails", new { id = item.ID })
+            }
+            @if (User.IsInRole("Administrators"))
+            {
+                @Html.ActionLink("Delete", "DeleteCourse", new { id=item.ID })
+            }
+            @if (User.IsInRole("Teachers"))
+            {
+                @Html.ActionLink("Details", "ViewCourseDetails", new { id = item.ID })
+            }
+            @if (User.IsInRole("Students"))
+            {
+                @Html.ActionLink("Assignments", "ViewCourseDetails", new { id = item.ID })
+            }
+        </td>
+    </tr>
+}
+
+
+
+
+
+</table>

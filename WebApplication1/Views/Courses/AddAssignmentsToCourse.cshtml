@@ -1,0 +1,34 @@
+﻿@model WebApplication1.Models.ViewModels.AddAssignmentToCourseViewModel
+
+@{ 
+    ViewBag.Title = "Add assignments to course";
+}
+
+<h2>Add Assignment To Course</h2>
+@using (Html.BeginForm("AddAssignmentsToCourse", "Courses", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.CourseID);
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.AssignmentID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.AssignmentID, Model.AvailableAssignments, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AssignmentID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Assignment" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

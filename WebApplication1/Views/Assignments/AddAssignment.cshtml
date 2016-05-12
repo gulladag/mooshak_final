@@ -1,0 +1,64 @@
+﻿@model WebApplication1.Models.ViewModels.AssignmentViewModel
+
+@{
+    ViewBag.Title = "AddAssignment";
+}
+
+<h2>Assignment</h2>
+
+@using (Html.BeginForm("AddAssignment", "Assignments", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create new Assignment.</h4>
+    <hr />
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StartDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control", type = "date" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StartTime, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.StartTime, new { @class = "form-control", placeholder = "22:22" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EndDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control", type = "date" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.EndTime, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.EndTime, new { @class = "form-control", placeholder = "22:22" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Add Assignment" />
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

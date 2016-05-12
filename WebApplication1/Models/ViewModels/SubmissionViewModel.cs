@@ -11,5 +11,6 @@ namespace WebApplication1.Models.ViewModels
         public int ID { get; set; }
         [Required(ErrorMessage = "Name is required!")]
         public string Name { get; set; }
+        public string line { get; set; }
     }
 }

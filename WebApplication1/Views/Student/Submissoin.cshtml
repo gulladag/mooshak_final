@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Submissoin";
+}
+
+<h2>Submissoin</h2>
+
+<div class="col-md-4">
+    @using (Html.BeginForm())
+    {
+        <input type="submit" class="btn btn-primary" value="Compile Test Code" />
+    }
+
+    @if (ViewBag.Output != null)
+    {
+        <ul>
+            @foreach (var line in ViewBag.Output)
+            {
+                <li>@line</li>
+            }
+        </ul>
+    }
+</div>
+

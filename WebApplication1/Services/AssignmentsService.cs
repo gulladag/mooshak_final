@@ -120,6 +120,20 @@ namespace WebApplication1.Services
 
             return viewModel;
         }
+        public AssignmentMilestoneViewModel GetMilestoneByID(int milestoneID)
+        {
+            var milestone = _db.Milestones.SingleOrDefault(x => x.ID == milestoneID);
+            var viewModel = new AssignmentMilestoneViewModel();
+            viewModel.ID = milestone.ID;
+            viewModel.AssignmentID = milestone.AssignmentID;
+            viewModel.Description = milestone.Description;
+            viewModel.Title = milestone.Title;
+            viewModel.weight = milestone.weight;
+            viewModel.Input = milestone.Input;
+            viewModel.Output = milestone.Output;
+
+            return viewModel;
+        }
         public List<Assignment> GetAllAssignments()
         {
             return _db.Assignments.ToList();

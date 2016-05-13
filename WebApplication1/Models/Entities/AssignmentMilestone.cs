@@ -32,8 +32,8 @@ namespace WebApplication1.Models.Entities
         /// then this property contains the value 15.
         /// </summary>
         public int weight { get; set; }
-        public string Input { get; set; }
-        public string Output { get; set; }
+        public List<string> Input { get; set; }
+        public List<string> Output { get; set; }
        // public virtual ICollection<Assignment> Assignments { get; set; }
 
     }

@@ -22,9 +22,9 @@ namespace WebApplication1.Models.ViewModels
         public int weight { get; set; }
         [Required]
         [Display(Name = "Input")]
-        public string Input { get; set; }
+        public List<string> Input { get; set; }
         [Required]
         [Display(Name = "Output")]
-        public string Output { get; set; }
+        public List<string> Output { get; set; }
     }
 }

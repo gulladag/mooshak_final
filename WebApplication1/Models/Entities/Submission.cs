@@ -9,10 +9,9 @@ namespace WebApplication1.Models.Entities
     {
         public int ID { get; internal set; }
         public string StudentID { get; set; }
-        public int ProjectID { get; set; }
         public int AssigmentID { get; set; }
         public int AssignmentMilestoneID { get; set; }
-        public string SubmittedCode { get; set; }
+        public List<string> SubmittedCode { get; set; }
         public bool IsCorrect { get; set; }
     }
 }

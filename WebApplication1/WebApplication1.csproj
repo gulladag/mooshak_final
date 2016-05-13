@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201605122200126_test4.Designer.cs">
       <DependentUpon>201605122200126_test4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605130326201_Submission lagað.cs" />
+    <Compile Include="Migrations\201605130326201_Submission lagað.Designer.cs">
+      <DependentUpon>201605130326201_Submission lagað.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
@@ -337,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605122200126_test4.resx">
       <DependentUpon>201605122200126_test4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605130326201_Submission lagað.resx">
+      <DependentUpon>201605130326201_Submission lagað.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

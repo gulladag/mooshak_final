@@ -6,11 +6,75 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models.ViewModels;
 using System.IO;
+using WebApplication1.Services;
+using System.Configuration;
 
 namespace WebApplication1.Controllers
 {
     public class StudentController : Controller
     {
+        private AssignmentsService _aService = new AssignmentsService();
+        private SubmissionService _sService = new SubmissionService();
+        private CoursesService _cService = new CoursesService();
+        private string workingFolder;
+
+        public ActionResult CompileCode(SubmissionViewModel model)
+        {
+            var code = model.SubmittedCode;
+            workingFolder = Server.MapPath("~/SubmittedCode/" + User.Identity.Name + "\\" + model.AssignmentID + "\\" + model.AssignmentMilestoneID) + "\\";
+            if (!Directory.Exists(workingFolder)) { Directory.CreateDirectory(workingFolder); }
+            var cppFileName = model.AssignmentMilestoneID + ".cpp";
+            var exeFilePath = workingFolder + ".exe";
+            System.IO.File.WriteAllLines(workingFolder + cppFileName, code);
+            var compileFolder = ConfigurationManager.AppSettings["CompilerPath"].ToString();
+
+            Process compiler = new Process();
+            compiler.StartInfo.FileName = "cmd.exe";
+            compiler.StartInfo.WorkingDirectory = workingFolder;
+            compiler.StartInfo.RedirectStandardInput = true;
+            compiler.StartInfo.RedirectStandardOutput = true;
+            compiler.StartInfo.RedirectStandardError = true;
+            compiler.StartInfo.UseShellExecute = false;
+
+            compiler.Start();
+            compiler.StandardInput.WriteLine("\"" + compileFolder + "vcvars32.bat" + "\"");
+            compiler.StandardInput.WriteLine("cl.exe /nologo /EHsc " + cppFileName);
+            Debug.WriteLine("\"" + compileFolder + "vcvars32.bat" + "\"");
+            Debug.WriteLine("cl.exe /nologo /EHsc " + cppFileName);//Debug.WriteLine(compiler.StandardError.ReadToEnd());
+            compiler.StandardInput.WriteLine("exit");
+            string output = compiler.StandardOutput.ReadToEnd();
+            compiler.WaitForExit();
+            compiler.Close();
+
+            var milestone = _aService.GetMilestoneByID(model.AssignmentMilestoneID);
+            var input = milestone.Input;
+            if (System.IO.File.Exists(exeFilePath))
+            {
+                var processInfoExe = new ProcessStartInfo(exeFilePath, "");
+                processInfoExe.UseShellExecute = false;
+                processInfoExe.RedirectStandardOutput = true;
+                processInfoExe.RedirectStandardError = true;
+                processInfoExe.RedirectStandardInput = true;
+                processInfoExe.CreateNoWindow = true;
+                var processExe = new Process();
+
+                processExe.StartInfo = processInfoExe;
+                processExe.Start();
+                processExe.StandardInput.WriteLine(input);
+                var lines = new List<string>();
+                while (!processExe.StandardOutput.EndOfStream)
+                {
+                    lines.Add(processExe.StandardOutput.ReadLine());
+                }
+                processExe.WaitForExit(100);
+                Debug.WriteLine(processExe.StandardOutput.ReadToEnd());
+                System.IO.File.WriteAllLines(workingFolder + "test.txt", lines);
+                milestone.Output = lines;
+                Debug.WriteLine("Tests");
+            }
+            return View(model);
+
+        }
 
         public ActionResult Submissoin(FormCollection data)
         {
@@ -20,6 +84,17 @@ namespace WebApplication1.Controllers
                         "{\n" +
                         "cout << \"Hello world\" << endl;\n" +
                         "cout << \"The output should contain two lines\" << endl;\n" +
+                        "return 0;\n" +
+                        "}";
+
+            var code1 = "#include <iostream>\n" +
+                        "using namespace std; \n" +
+                        "int main()\n" +
+                        "{\n" +
+                        "int a;\n" +
+                        "cin >> a;\n" +
+                        "a = a * 2;\n" +
+                        "cout << \"The output is \" << a << endl;\n" +
                         "return 0;\n" +
                         "}";
 
@@ -67,7 +142,7 @@ namespace WebApplication1.Controllers
             compiler.StandardInput.WriteLine("cl.exe /nologo /EHsc " + cppFileName);
             Debug.WriteLine("\"" + compileFolder + "vcvars32.bat" + "\"");
             Debug.WriteLine("cl.exe /nologo /EHsc " + cppFileName);
-            Debug.WriteLine(compiler.StandardError.ReadToEnd());
+            //Debug.WriteLine(compiler.StandardError.ReadToEnd());
             compiler.StandardInput.WriteLine("exit");
             string output = compiler.StandardOutput.ReadToEnd();
             compiler.WaitForExit();

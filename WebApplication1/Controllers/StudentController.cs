@@ -69,9 +69,15 @@ namespace WebApplication1.Controllers
                 processExe.WaitForExit(100);
                 Debug.WriteLine(processExe.StandardOutput.ReadToEnd());
                 System.IO.File.WriteAllLines(workingFolder + "test.txt", lines);
+                var correctOutput = milestone.Output;
                 milestone.Output = lines;
                 Debug.WriteLine("Tests");
+                if(correctOutput == milestone.Output)
+                {
+                    model.IsCorrect = true;
+                }
             }
+            
             return View(model);
 
         }

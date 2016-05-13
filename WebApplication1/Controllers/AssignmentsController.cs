@@ -113,7 +113,7 @@ namespace WebApplication1.Controllers
                 miledb.AddMilestoneToDB(newMilestone);
 
             //return RedirectToAction("ViewAssignmentDetails", "Assignments");
-                 return RedirectToAction("Assignments", "ViewAssignmentDetails", new { id = model.AssignmentID });
+                return RedirectToAction("ViewAssignmentDetails", "Assignments", new { id = model.AssignmentID });
             }
             return View(model);
         }

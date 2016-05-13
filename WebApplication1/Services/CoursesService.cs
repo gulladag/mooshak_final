@@ -135,10 +135,10 @@ namespace WebApplication1.Services
             Course courseToAdd = (from course in _db.Courses where course.ID == courseID select course).SingleOrDefault();         
             if(assignmentToAdd != null && courseToAdd != null)
             {
-                /*
-                if (assignmentToAdd.Courses.Where(x => x.ID == courseID).Count() == 0)
+                
+                /*if (assignmentToAdd.Course.Where(x => x.ID == courseID).Count() == 0)
                 {
-                    assignmentToAdd.Courses.Add(courseToAdd);
+                    assignmentToAdd.Course.Add(courseToAdd);
                     _db.SaveChanges();
                 }*/
             }

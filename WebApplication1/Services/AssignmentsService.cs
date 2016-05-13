@@ -41,6 +41,13 @@ namespace WebApplication1.Services
             _db.SaveChanges();
         }
 
+        public void DeleteAssignment(AssignmentViewModel model)
+        {
+            var assignment = _db.Assignments.SingleOrDefault(x => x.ID == model.ID);
+            _db.Assignments.Remove(assignment);
+            _db.SaveChanges();
+        }
+
         public void AddAssignmentToCourse(AssignmentViewModel model)
         {
             char delimiter = '-';

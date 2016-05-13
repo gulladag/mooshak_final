@@ -98,5 +98,30 @@ namespace WebApplication1.Controllers
             _service.CreateAssignmentMilestone(model);
             return RedirectToAction("CreateMilestone", "Assignments", new { assignmentID = model.AssignmentID });
         }
+
+
+        [HttpGet]
+        [Route("Assignments/DeleteAssignment/{assignmentID}")]
+        public ActionResult DeleteAssignment(int? assignmentID)
+        {
+            AssignmentsService b = new AssignmentsService();
+            AssignmentViewModel model = b.GetAssignmentByID(assignmentID.Value);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteAssignment(AssignmentViewModel model)
+        {
+            if (model.ID != null)
+            {
+                AssignmentsService assignmentdb = new AssignmentsService();
+                assignmentdb.DeleteAssignment(model);
+
+                return RedirectToAction("ViewCourses", "Courses");
+            }
+            return View(model);
+        }
+
     }
 }

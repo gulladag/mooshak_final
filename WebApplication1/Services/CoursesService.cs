@@ -93,7 +93,7 @@ namespace WebApplication1.Services
         public List<CourseViewModel> GetCoursesByUserID(string userID)
         {
             List<CourseViewModel> skil = new List<CourseViewModel>();
-            var user = (from users in _db.Users where (users.Id == userID)select users ).SingleOrDefault();
+            var user = (from users in _db.Users where (users.Id == userID) select users).SingleOrDefault();
             var courses = user.Courses.ToList();
             foreach (Course x in courses)
             {
@@ -104,10 +104,10 @@ namespace WebApplication1.Services
             }
             skil.Sort((x, y) => string.Compare(x.Name, y.Name));
             return skil;
-            
+
 
         }
-       
+
 
         public void AddStudentToCourse(int courseId, string userId)
         {
@@ -132,19 +132,26 @@ namespace WebApplication1.Services
         public void AddAssignmentToCourse(int courseID, int assignmentID)
         {
             Assignment assignmentToAdd = (from assignment in _db.Assignments where assignment.ID == assignmentID select assignment).SingleOrDefault();
-            Course courseToAdd = (from course in _db.Courses where course.ID == courseID select course).SingleOrDefault();         
-            if(assignmentToAdd != null && courseToAdd != null)
+            Course courseToAdd = (from course in _db.Courses where course.ID == courseID select course).SingleOrDefault();
+            if (assignmentToAdd != null && courseToAdd != null)
             {
-                
+
+
                 if (courseToAdd.Assignments.Where(x => x.ID == courseID).Count() == 0)
                 {
                     courseToAdd.Assignments.Add(assignmentToAdd);
-                    _db.SaveChanges();
+
+                    /*if (assignmentToAdd.Course.Where(x => x.ID == courseID).Count() == 0)
+                    {
+                        assignmentToAdd.Course.Add(courseToAdd);
+
+                        _db.SaveChanges();
+                    }*/
                 }
+                //throw new NotImplementedException();
             }
-            //throw new NotImplementedException();
         }
-    } 
+    }
 }
 
     

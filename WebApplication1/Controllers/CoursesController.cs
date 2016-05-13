@@ -68,7 +68,7 @@ namespace WebApplication1.Controllers
             AssignmentsService ass = new AssignmentsService();
 
             CourseViewModel model = cs.GetCourseByID(courseID.Value);
-            model.Assignments = ass.GetAssignmentsByCourseID(courseID.Value);
+            model.Assignments = ass.GetAssignmentsByCourseID(courseID.Value).ToList();
 
             return View(model);
         }
@@ -81,7 +81,7 @@ namespace WebApplication1.Controllers
             model.CourseID = courseID;
 
             UserService userService = new UserService();
-            model.AvailableStudents = userService.GetAllUsers().Select(x=>new SelectListItem() { Value = x.Id, Text = x.UserName }).ToList();
+            model.AvailableStudents = userService.GetAllUsers().Select(x=>new SelectListItem() { Value = x.Id, Text = x.Name }).ToList();
 
             return View(model);
         }
@@ -117,7 +117,8 @@ namespace WebApplication1.Controllers
 
             assignmentService.AddAssignmentToCourse(model.CourseID, model.AssignmentID);
 
-            return RedirectToAction("ViewCourseDetails", new { courseID = model.CourseID });
+            return RedirectToAction("ViewCourseDetails", new { id = model.CourseID });
+            
         }
 
         [HttpGet]

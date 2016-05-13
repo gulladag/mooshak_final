@@ -14,18 +14,5 @@ namespace WebApplication1.Models.Entities
         public virtual ICollection<ApplicationUser> Students { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
 
-        /*public List<ApplicationUser> Teachers { get; set; }
-        public List<ApplicationUser> Students { get; set; }
-
-        [Authorize(Roles = "Admin")]
-        public void AddTeacher(ApplicationUser teacher)
-        {
-            Teachers.Add(teacher);
-        }
-        public  void AddStudent(ApplicationUser student)
-        {
-            Students.Add(student);
-        }*/
-
     }
 }

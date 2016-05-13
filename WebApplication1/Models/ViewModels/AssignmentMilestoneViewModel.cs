@@ -13,6 +13,7 @@ namespace WebApplication1.Models.ViewModels
         [Required]
         [Display(Name = "Name")]
         public string Title { get; set; }
+        [Required]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Description")]
         public string Description { get; set; }
@@ -20,11 +21,9 @@ namespace WebApplication1.Models.ViewModels
         [Display(Name = "Weight")]
         public int weight { get; set; }
         [Required]
-        [DataType(DataType.MultilineText)]
         [Display(Name = "Input")]
         public string Input { get; set; }
         [Required]
-        [DataType(DataType.MultilineText)]
         [Display(Name = "Output")]
         public string Output { get; set; }
     }

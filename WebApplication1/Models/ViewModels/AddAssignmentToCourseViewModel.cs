@@ -15,11 +15,3 @@ namespace WebApplication1.Models.ViewModels
     }
 }
 
-
-
-/*[Display(Name = "Select student")]
-public string UserID { get; set; }
-
-public int CourseID { get; set; }
-
-public List<SelectListItem> AvailableStudents { get; set; }*/

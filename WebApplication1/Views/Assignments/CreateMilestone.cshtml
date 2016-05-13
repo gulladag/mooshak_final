@@ -6,7 +6,8 @@
 
 <h2>Create Milestone</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
+
 {
     @Html.AntiForgeryToken()
     
@@ -14,18 +15,12 @@
         
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.AssignmentID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AssignmentID)
-                @Html.ValidationMessageFor(model => model.AssignmentID)
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.AssignmentID)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title)
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Title)
             </div>
         </div>
@@ -33,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Description)
             </div>
         </div>
@@ -41,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.weight, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.weight)
+                @Html.TextBoxFor(model => model.weight, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.weight)
             </div>
         </div>
@@ -49,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Input, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Input)
+                @Html.TextAreaFor(model => model.Input, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Input)
             </div>
         </div>
@@ -57,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Output, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Output)
+                @Html.TextAreaFor(model => model.Output, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Output)
             </div>
         </div>
@@ -71,5 +66,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "AssignmentMilestone")
+    @Html.ActionLink("Back to List", "ViewAssignmentDetails", "Assignments", new { id = Model.AssignmentID})
 </div>

@@ -22,6 +22,11 @@ namespace WebApplication1.Services
             _db.Assignments.Add(newAssignment);
             _db.SaveChanges();
         }
+        public void AddMilestoneToDB(AssignmentMilestone newMilestone)
+        {
+            _db.Milestones.Add(newMilestone);
+            _db.SaveChanges();
+        }
 
         public void EditAssignmentInDB(AssignmentViewModel model)
         {
@@ -62,7 +67,7 @@ namespace WebApplication1.Services
 
 
 
-        /* public void AddStudentToCourse(int courseId, string userId)
+        /*public void AddStudentToCourse(int courseId, string userId)
          {
              ApplicationUser studentToAdd = (from student in _db.Users where student.Id == userId select student).SingleOrDefault();
              Course courseToAdd = (from course in _db.Courses where course.ID == courseId select course).SingleOrDefault();
@@ -113,22 +118,23 @@ namespace WebApplication1.Services
             return _db.Assignments.ToList();
         }
 
-        public bool CreateAssignmentMilestone(AssignmentMilestoneViewModel model)
+        public void CreateAssignmentMilestone(AssignmentMilestoneViewModel model)
         {
-            AssignmentMilestone newMilestone = new AssignmentMilestone()
-            {
+            var newMilestone = new AssignmentMilestone();
+            /*
+
+                newMilestone.Title = model.Title;
                 AssignmentID = model.AssignmentID,
-                Title = model.Title,
                 Description = model.Description,
                 weight = model.weight,
                 Input = model.Input,
                 Output = model.Output
-            };
+            
 
             _db.Milestones.Add(newMilestone);
             _db.SaveChanges();
 
-            return true;
+            return true; */
         }
     }
 }

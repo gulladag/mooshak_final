@@ -34,5 +34,7 @@ namespace WebApplication1.Models.Entities
         public int weight { get; set; }
         public string Input { get; set; }
         public string Output { get; set; }
+       // public virtual ICollection<Assignment> Assignments { get; set; }
+
     }
 }

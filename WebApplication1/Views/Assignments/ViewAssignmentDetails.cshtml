@@ -63,12 +63,64 @@
 
     </dl>
 </div>
+
+@if (Model.Milestones.Count == 0)
+{
+    <div class="alert alert-info">
+        No milestones are currently a part of this assignments!
+    </div>
+}
+else
+{
+    <h3>Milestones in course</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Weight</th>
+                <th>Input</th>
+                <th>Output</th>
+        </thead>
+        <tbody>
+            @foreach (var milestones in Model.Milestones)
+            {
+                <tr>
+                    <td>@milestones.Title</td>
+                    <td>@milestones.Description</td>
+                    <td>@milestones.weight</td>
+                    <td>@milestones.Input</td>
+                    <td>@milestones.Output</td>
+                    <td>
+                        @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
+                    {
+                            @Html.ActionLink("Edit", "EditMilestone", "Assignments", new { id = milestones.ID }, null)
+                        }
+                        @if (User.IsInRole("Administrators") || (User.IsInRole("Teachers")))
+                    {
+                            @Html.ActionLink("Delete", "DeleteMilestone", "Assignments", new { id = milestones.ID }, null)
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
 <p>
-     
-    @Html.ActionLink("Back to List", "ViewCourseDetails", "Courses", new { id = Model.CourseID }, null)
     @if (User.IsInRole("Teachers"))
     {
-        @Html.ActionLink("Edit", "EditAssignment", "Assignments", new { id = Model.ID })
-        @Html.ActionLink("Create Milestone", "CreateMilestone", "Assignments", new { id = Model.ID })
+        @Html.ActionLink("Create Milestone", "CreateMilestone", "Assignments", new { id = Model.ID, @class = "btn btn-default" })
     }
 </p>
+<p>
+    @Html.ActionLink("Back to List", "ViewCourseDetails", "Courses", new { id = Model.CourseID }, null)
+</p>
+
+
+
+
+

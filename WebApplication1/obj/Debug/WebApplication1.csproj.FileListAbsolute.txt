@@ -452,3 +452,6 @@ C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebAppli
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial2.resources
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial3.resources
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial4.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test2.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test3.resources
+C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test4.resources

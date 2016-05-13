@@ -46,6 +46,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("AddAssignment");
             }
 
+            
             return View(model);
         }
         [HttpGet]
@@ -81,11 +82,12 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
+        [Route("Assignments/CreateMilestone/{id}")]
         [Authorize(Roles = "Administrators, Teachers")]
-        public ActionResult CreateMilestone ()
+        public ActionResult CreateMilestone (int id)
         {
             AssignmentMilestoneViewModel newMilestone = new AssignmentMilestoneViewModel();
-            //newMilestone.AssignmentID = assignmentID;
+            newMilestone.AssignmentID = id;
 
             return View(newMilestone);
         }
@@ -93,10 +95,29 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrators, Teachers")]
         [ValidateAntiForgeryToken]
+        //[Route("Assignments/ViewAssignmentDetails/{id}")]
         public ActionResult CreateMilestone(AssignmentMilestoneViewModel model)
         {
-            _service.CreateAssignmentMilestone(model);
-            return RedirectToAction("CreateMilestone", "Assignments", new { assignmentID = model.AssignmentID });
+            if (ModelState.IsValid)
+            {
+                // _service.CreateAssignmentMilestone(model);
+                
+                AssignmentMilestone newMilestone = new AssignmentMilestone();
+                newMilestone.Title = model.Title;
+                newMilestone.Description = model.Description;
+                newMilestone.AssignmentID = model.AssignmentID;
+                newMilestone.weight = model.weight;
+                newMilestone.Input = model.Input;
+                newMilestone.Output = model.Output;
+                AssignmentsService miledb = new AssignmentsService();
+                miledb.AddMilestoneToDB(newMilestone);
+
+            //return RedirectToAction("ViewAssignmentDetails", "Assignments");
+                 return RedirectToAction("Assignments", "ViewAssignmentDetails", new { id = model.AssignmentID });
+            }
+            return View(model);
         }
+        
     }
 }
+

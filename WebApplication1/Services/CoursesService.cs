@@ -136,20 +136,13 @@ namespace WebApplication1.Services
             if (assignmentToAdd != null && courseToAdd != null)
             {
 
-
                 if (courseToAdd.Assignments.Where(x => x.ID == courseID).Count() == 0)
                 {
                     courseToAdd.Assignments.Add(assignmentToAdd);
-
-                    /*if (assignmentToAdd.Course.Where(x => x.ID == courseID).Count() == 0)
-                    {
-                        assignmentToAdd.Course.Add(courseToAdd);
-
-                        _db.SaveChanges();
-                    }*/
+                    _db.SaveChanges();
                 }
-                //throw new NotImplementedException();
             }
+            //throw new NotImplementedException();
         }
     }
 }

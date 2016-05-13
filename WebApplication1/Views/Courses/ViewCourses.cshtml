@@ -4,13 +4,13 @@
     ViewBag.Title = "View Courses";
 }
 
-<h2>ViewCourses</h2>
+<h2>Your courses</h2>
 
 
 <p>
     @if (User.IsInRole("Administrators"))
     {
-    @Html.ActionLink("Create New", "AddCourse")
+    @Html.ActionLink("Create new course", "AddCourse")
     }
 </p>
 <table class="table">
@@ -53,9 +53,5 @@
         </td>
     </tr>
 }
-
-
-
-
 
 </table>

@@ -452,6 +452,72 @@ C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebAppli
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial2.resources
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial3.resources
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial4.resources
+<<<<<<< HEAD
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test2.resources
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test3.resources
 C:\Users\daddi\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test4.resources
+=======
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\WebApplication1.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\EntityFramework.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Owin.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Optimization.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.WebPages.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\WebGrease.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\EntityFramework.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Optimization.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.WebPages.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.test1.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial1.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial2.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial3.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.Migrations.initial4.resources
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Axel Kristinsson\Documents\GitHub\mooshak_final\WebApplication1\obj\Debug\WebApplication1.pdb
+>>>>>>> 1ab1945665176d478ac52cbb6c8ff68f0cb540ac

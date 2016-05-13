@@ -4,14 +4,14 @@
     ViewBag.Title = "EditAssignment";
 }
 
-<h2>EditAssignment</h2>
+<h2>Edit Assignment</h2>
 
 @using (Html.BeginForm("EditAssignment", "Assignments", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>AssignmentViewModel</h4>
+        <h4>Here you can edit the assignment @Model.Title</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
